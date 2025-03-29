@@ -1,0 +1,130 @@
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --button-text: #fff;
+    --word-display-color: #444;
+    --border-color: #ddd;
+    --toggle-bg: #e4e4e4;
+    --toggle-circle: #fff;
+    --toggle-sun: #ffd000;
+    --toggle-moon: #ddd;
+  }
+  
+  /* Dark theme */
+  .dark-theme {
+    --bg-color: #222;
+    --text-color: #f0f0f0;
+    --primary-color: #3498db;
+    --secondary-color: #1a6ca4;
+    --button-text: #fff;
+    --word-display-color: #f0f0f0;
+    --border-color: #444;
+    --toggle-bg: #383838;
+    --toggle-circle: #3498db;
+    --toggle-sun: #aaa;
+    --toggle-moon: #9b59b6;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* New modern toggle styling */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    width: 75px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: var(--toggle-bg);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .toggle-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .toggle-circle {
+    position: absolute;
+    top: 3px; /* Adjusted to center the larger circle */
+    left: 7px; /* Adjusted to center the larger circle */
+    width: 28px; /* Increased size */
+    height: 28px; /* Increased size */
+    border-radius: 50%;
+    background-color: var(--toggle-circle);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for the larger size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
+  .toggle-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  
+  .sun-icon, .moon-icon {
+    font-size: 20px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sun-icon {
+    color: var(--toggle-sun);
+    margin-left: -2px;
+  }
+  
+  .moon-icon {
+    color: var(--toggle-moon);
+    margin-right: -2px;
+  }
+  
+  .dark-theme .toggle-circle {
+    transform: translateX(35px);
+  }
+  
+  /* Hide the text */
+  #theme-text {
+    display: none;
+  }
+
+  button{
+    border-radius: 15px;
+    font-size: 2em;
+    background-color: var(--toggle-bg);
+    color: var(--text-color);
+    border-color: var(--text-color);
+    padding: 10px;
+  }
